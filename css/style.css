@@ -419,3 +419,16 @@ section.block .service-text h3{margin-top:0}
 @media (max-width:760px){
   .service,.service.service-band{grid-template-columns:1fr;gap:28px}
 }
+
+/* ---- 0.4 additions ---- */
+/* gap between stacked photos in the lessons and tuning columns */
+.service-media:not(.media-masonry) img + img{margin-top:12px}
+
+/* ---- 0.9 additions: same two equal columns in every section ---- */
+@media (min-width:761px){
+  .service,.service.service-band{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+}
+/* wide lead photo spanning both picture columns, the rest flow in two columns */
+.media-lead > img:first-child{column-span:all}
+/* slight crop so the picture column does not outgrow the text */
+.crop-tall{aspect-ratio:5/6;object-fit:cover}
